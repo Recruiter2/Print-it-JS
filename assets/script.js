@@ -42,7 +42,6 @@ Array.from(myRightButton).forEach(Rb => {
 			var element = document.createElement("p");
 
 			banner[0].innerHTML = slides[current_slide_num].tagLine;
-			console.log(banner);
 
 			//document.getElementById("banner").replaceChild(element, banner[0]);
 			// const parentDiv = sp2;
@@ -74,8 +73,9 @@ Array.from(myLeftButton).forEach(Rb => {
 const dots = document.getElementsByClassName("dots");
 
 function afficherBoutonsDesSlides(slides) {
-
 	for (const slide of slides) {
+		let index = slides.indexOf(slide);
+		console.log(index);
 		var element = document.createElement("div");
 		// remplacer/modifier à la source de l'img
 		element.className = "dot";
@@ -84,7 +84,7 @@ function afficherBoutonsDesSlides(slides) {
 			// unselect_dot(sub_dot);
 			// dot.classList.add("dot_selected");
 			image[0].src = "./assets/images/slideshow/" + slide.image;
-
+			current_slide_num = index;
 		});
 
 	}
